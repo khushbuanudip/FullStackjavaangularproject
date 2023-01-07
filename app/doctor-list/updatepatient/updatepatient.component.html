@@ -1,0 +1,77 @@
+<h1>UPDATE AN Patient</h1>
+<!-- <h1>Enter the Patient details</h1>
+<form (ngSubmit)="updatePatient(updatePatient.value)" #updatePatient="ngForm">
+  <div class="form-control p-2">
+    <label for="pid">Patient Id</label>
+    <input type="text" name="pid" id="pid" #pid>
+</div>
+<div class="form-control p-2">
+  <label for="pname">Patient Name</label>
+  <input type="text" name="pname" id="pname" #pname>
+</div>
+<div class="form-control p-2">
+  <label for="pnumber">Patient Number</label>
+  <input type="text" name="pnumber" id="pnumber" #pnumber>
+</div>
+<div class="form-control p-2">
+  <label for="pemail">Patient Email</label>
+  <input type="text" name="pemail" id="pemail" #pemail>
+</div>
+<div class="text-center p-2">
+    <input type="submit" value="Submit">
+</div>
+    <div class="text-center p-2">
+        <input type="submit" value="Update Patient">
+    </div>
+</form>  -->
+ <div class="card my-5">
+  <div class="card-body">
+    <form (ngSubmit)="updatePatient(patientForm.value)" #patientForm="ngForm">
+      <div class="form-group">
+        <label for="">Id</label>
+        <input type="text" [(ngModel)]="patient.pid" 
+          class="form-control" 
+          id="pid" 
+          name="pid" 
+          placeholder="Enter patient's ID "
+          required #pid="ngModel">
+        <div [hidden]="!pid.pristine" class="alert alert-danger">Id is required</div>
+      </div>
+      <div class="form-group">
+        <label for="pname">Name</label>
+        <input type="text" [(ngModel)]="patient.pname" 
+
+          class="form-control" 
+          id="pname" 
+          name="pname" 
+          placeholder="Enter patient name"
+          required #name="ngModel">
+      </div>
+      <div [hidden]="!name.pristine" class="alert alert-danger">Name is required</div>
+      <div class="form-group">
+        <label for="pemail">Email</label>
+        <input type="text" [(ngModel)]="patient.pemail" 
+          class="form-control" 
+          id="pemail" 
+          name="pemail" 
+          placeholder="Enter your email address"
+          required #pemail="ngModel">
+        <div [hidden]="!pemail.pristine" class="alert alert-danger">Email is required</div>
+      </div>
+      <div [hidden]="!pnumber.pristine" class="alert alert-danger">Name is required</div>
+      <div class="form-group">
+        <label for="">MobileNumber</label>
+        <input type="text" [(ngModel)]="patient.pnumber" 
+          class="form-control" 
+          id="pnumber" 
+          name="pnumber" 
+          placeholder="Enter patient's Mobile Number"
+          required #pnumber="ngModel">
+        <div [hidden]="!pnumber.pristine" class="alert alert-danger">MobileNumber is required</div>
+      </div>
+      <button type="submit" [disabled]="!patientForm.form.valid" 
+        class="btn btn-info">Submit</button>
+    </form>
+  </div>
+</div>
+

@@ -1,0 +1,22 @@
+
+
+<h1>
+    
+    {{message}}</h1>
+    <div class="card my-5">
+        <div class="card-body">
+<form #form="ngForm" (ngSubmit) = "loginEmployee(form)">
+    <div class="form-group">
+        <label for="adminId">Doctor Id</label>
+        <input type="text" name="adminId" id="adminId" [(ngModel)]= "adminId" class="form-control" >
+    </div>
+    <div  class="form-group">
+        <label for="adminPass">Doctor Password</label>
+        <input type="password" name="adminPass" id="adminPass" [(ngModel)]= "adminPass" class="form-control">
+    </div>
+    <div class="text-center p-2">
+        <input type="submit" value="LOGIN" class="btn btn-info">
+    </div>
+</form>
+</div>
+</div>

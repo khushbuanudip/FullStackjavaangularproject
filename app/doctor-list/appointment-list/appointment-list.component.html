@@ -1,0 +1,24 @@
+<div class="card my-5">
+    <div class="card-body">
+      <table class="table table-bordered table-striped">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Patient Name</th>
+            <th scope="col">Dr. name</th>
+            <th scope="col">Date of Appointment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of appointments">
+            <td>{{ user.aid }}</td>
+            <td>{{ user.pname }}</td>
+            <td>{{ user.dname }}</td>
+            <td>{{ user.date }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  
